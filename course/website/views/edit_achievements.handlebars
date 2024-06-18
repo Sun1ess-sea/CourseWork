@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Управление достижениями</title>
+  <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="container text-center py-5">
+            <h1 class="mb-4">ДОСТИЖЕНИЯ</h1>
+            <p class="mb-5">Наши последние достижения собраны для Вас!</p>
+            <div class="row">
+                {{#each achievements}}
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="{{this.image_url}}" class="card-img-top" alt="Достижение 1">
+                            <div class="card-body">
+                                <p class="card-text">{{this.content}}</p>
+                                <form action="/admin/delete_achievements" method="POST" style="display:inline;">
+                                    <input type="hidden" name="id" value="{{this.id}}">
+                                <button type="submit" class="btn btn-danger">Удалить</button>
+                        </form>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+        <h2>Добавить достижение</h2>
+        <form action="/admin/add_achievements" method="POST">
+        <div class="mb-3">
+            <label for="content" class="form-label-control">Заголовок</label>
+            <textarea class="form-control" id="content" name="content"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="content" class="form-label-control">Контент</label>
+            <textarea class="form-control" id="full_content" name="full_content"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="image_url" class="form-label-control">Картинка</label>
+            <input type="text" class="form-control" id="image_url" name="image_url">
+        </div>
+        <button type="submit" class="btn btn-primary">Добавить достижение</button>
+        <a href="/admin" class="btn btn-primary">Вернуться назад</a>
+        </form>
+  </div>
+</body>
+</html>

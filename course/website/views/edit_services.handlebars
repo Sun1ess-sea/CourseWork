@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управлять услугами</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Управлять услугами</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Цена</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each services}}
+                <tr>
+                    <td>{{this.name_service}}</td>
+                    <td>{{this.service_cost}}</td>
+                    <td>
+                        <form action="/admin/delete_service" method="post" style="display:inline;">
+                            <input type="hidden" name="service_id" value="{{this.service_id}}">
+                            <input type="hidden" name="name_service" value="{{this.name_service}}">
+                            <input type="hidden" name="service_cost" value="{{this.service_cost}}">
+                            <button type="submit" class="btn btn-danger">Удалить</button>
+                        </form>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <h2>Добавить новую услугу</h2>
+        <form action="/admin/add_service" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label-control">Название</label>
+                <input type="text" class="form-control" id="name_service" name="name_service" required>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label-control">Цена</label>
+                <input type="number" pattern="[0-9]*" inputmode="numeric" step="0.01" class="form-control" id="service_cost" name="service_cost" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Добавить</button>
+            <a href="/admin" class="btn btn-primary">Вернуться назад</a>
+        </form>
+    </div>
+</body>
+</html>

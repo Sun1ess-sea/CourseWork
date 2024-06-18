@@ -1,0 +1,373 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.info-block {
+background: url('../images/stats.png') no-repeat center center;
+background-size: cover;
+padding: 60px 0;
+position: relative;
+}
+
+.info-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.info-block .container {
+  position: relative; 
+  z-index: 2;
+}
+
+.info-block h1 {
+  color: #d4af37;
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.info-block p {
+  color: #d4af37;
+  font-size: 1.2rem;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../images/main.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.h1 {
+  color: #d4af37; 
+}
+
+.ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.btn-primary {
+  background-color: #d4af37; 
+  border-color: #8a7328; 
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #8a7328;
+  border-color: #d4af37; 
+  color: #fff; 
+}
+
+.btn-primary:active { 
+  background-color: #ffffff !important;
+  border-color: #d4af37 !important;
+  color: #d4af37 !important;
+}
+
+.bg-dark {
+  background-color: #000 !important;
+}
+
+.info-container {
+  position: relative;
+  overflow: hidden;
+  border: 0.1% solid #ddd; /* Примерная замена для 1px */
+  border-radius: 0.8%; /* Примерная замена для 8px */
+  margin-bottom: 2%; /* Примерная замена для 20px */
+}
+
+.info-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.info-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+
+.info-container:hover::before {
+  opacity: 1;
+}
+
+.info-title, .info-content {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  padding: 1%; /* Примерная замена для 10px */
+  width: 80%; 
+  transition: all 0.3s;
+  z-index: 2; 
+}
+
+.info-title {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.info-title h2 {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 2%; /* Примерная замена для 20px */
+  padding: 1%; /* Примерная замена для 10px */
+}
+
+.info-container .info-content {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  text-align: left; 
+}
+
+.info-container:hover .info-title {
+  opacity: 0;
+}
+
+.info-container:hover .info-content {
+  opacity: 1;
+}
+
+.info-container .info-content ul {  
+  list-style: none;
+  padding: 0;
+  margin: 1% 0 0; /* Примерная замена для 10px */
+  font-size: 120%; /* Замена 1.2em на 120% */
+  font-weight: bold; 
+  list-style-type: square;
+}
+
+.info-container .info-content ul li {
+  margin-bottom: 0.5%; /* Примерная замена для 5px */
+}
+
+
+.line {
+  border-bottom: 2px solid #d4af37; 
+  margin: 3%;
+}
+
+form .form-label {
+  color: #fff !important;
+}
+
+form .form-control {
+  background-color: #333;
+  color: #fff;
+  border: 3px solid #555;
+  box-shadow: none !important;
+}
+
+form .form-control:focus {
+  background-color: #ffffff;  
+  color: #000000;
+  border: 3px solid #d4af37;
+  box-shadow: #000000 !important;
+}
+
+form .form-control::placeholder {
+  color: #aaa;
+}
+
+.bg-overlay {
+    background: url('../images/consult.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+.bg-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(0, 0, 0));
+}
+
+.form-container {
+  z-index: 2;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+h1, h2, h3, h4, .highlight {
+  font-family: 'Playfair Display';
+  color: #d4af37;
+}
+
+p, li, label, .btn-primary, .highlight, tr, .total-sum {
+  font-family: 'Istok Web';
+}
+
+.nav-link {
+  color: #d4af37 !important;
+  text-decoration: none;
+}
+
+.nav-link:hover { 
+  color: #d4af37 !important;
+  text-decoration: underline;
+}
+
+.navbar-brand {
+  color: #c5a233 !important;
+  font-family: 'Playfair Display';
+}
+
+.navbar-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-toggler {
+  color:#d4af37;
+}
+
+.navbar-admin{
+  color: #c5a233 !important;
+  font-family: 'Istok Web';
+  white-space: nowrap;
+}
+
+.footer {
+  background-color: #000;
+  color: #d4af37; 
+}
+
+.footer .footer-heading {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.footer a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.social-icon {
+  margin: 0 10px;
+  color: #d4af37;
+}
+
+.social-icon:hover{
+  color: #fff;
+}
+
+.shift-left {
+  margin-right: 10%
+}
+
+.card {
+  border: 5px solid #e5b000;
+  border-radius: 2.5rem;
+  overflow: hidden;
+  margin-bottom: 2%;
+}
+
+.card-title {
+  color: #d4af37;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: 'Playfair Display';
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Istok Web';
+  max-height: 100px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box; 
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical;
+  line-height: 1.5; 
+}
+
+.card-body {
+  background-color: white;
+  color: black;
+  border-radius: 2.5rem;
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.img-size {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: cover;
+}
+
+.form-control::placeholder {
+  color: black;
+}

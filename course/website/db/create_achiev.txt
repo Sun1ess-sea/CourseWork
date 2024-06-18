@@ -1,0 +1,10 @@
+-- database: c:\Users\mazgu\Desktop\course-senya\website\db\database.db
+
+-- Use the ▷ button in the top right corner to run the entire file.
+
+CREATE TABLE achievements (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    image_url TEXT NOT NULL,
+    content TEXT NOT NULL
+);
+

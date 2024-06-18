@@ -1,0 +1,11 @@
+-- database: c:\Users\mazgu\Desktop\course-senya\website\db\database.db
+
+-- Use the ▷ button in the top right corner to run the entire file.
+
+CREATE TABLE IF NOT EXISTS orders (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    phone TEXT NOT NULL,
+    email TEXT NOT NULL,
+    total REAL NOT NULL
+);

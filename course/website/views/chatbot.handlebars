@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат-бот</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .chat-container {
+            max-width: 600px;
+            margin: auto;
+            margin-top: 50px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .chat-message {
+            margin-bottom: 10px;
+        }
+        .bot-message {
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .user-message {
+            text-align: right;
+            margin-bottom: 10px;
+            background-color: #fdd85e;
+            border-radius: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container chat-container">
+        <h2>Чат-бот</h2>
+        <div id="chat-box" class="mb-3"></div>
+        <form id="chat-form">
+            <div class="mb-3">
+                <input type="text" oninput="processInput(this)" id="user-input" class="form-control" placeholder="Введите Ваше сообщение, используя цифры">
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+            <a href="/" class="btn btn-primary">Вернуться назад</a>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatBox = document.getElementById('chat-box');
+
+            const welcomeMessages = [
+                'Здравствуйте! Вот список команд:',
+                '1. О коллегии.',
+                '2. Какими областями Права занимается Наша коллегия.',
+                '3. Наши адвокаты.',
+                '4. Об услугах.'
+            ];
+
+            welcomeMessages.forEach(message => {
+                const botMessage = document.createElement('div');
+                botMessage.className = 'chat-message bot-message';
+                botMessage.textContent = message;
+                chatBox.appendChild(botMessage);
+            });
+        });
+
+        document.getElementById('chat-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const userInput = document.getElementById('user-input').value;
+            const chatBox = document.getElementById('chat-box');
+
+            if (userInput.trim() === '') return;
+
+            // Добавляем сообщение пользователя в чат
+            const userMessage = document.createElement('div');
+            userMessage.className = 'chat-message user-message';
+            userMessage.textContent = userInput;
+            chatBox.appendChild(userMessage);
+
+            // Отправляем сообщение на сервер
+            fetch('/chatbot', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: userInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                data.responses.forEach(response => {
+                    const botMessage = document.createElement('div');
+                    botMessage.className = 'chat-message bot-message';
+                    botMessage.textContent = response;
+                    chatBox.appendChild(botMessage);
+                });
+                chatBox.scrollTop = chatBox.scrollHeight;
+            });
+
+            document.getElementById('user-input').value = '';
+        });
+
+        function processInput(input) {
+            // Удаляем пробелы в начале и в конце строки
+            input.value = input.value.trim();
+
+            // Заменяем все нецифровые символы (кроме пробелов) на пустую строку
+            input.value = input.value.replace(/[^\d\s]/g, '');
+
+            // Ограничиваем длину ввода одним символом
+            if (input.value.length > 1) {
+                input.value = input.value.charAt(0);
+            }
+        }
+    </script>
+</body>
+</html>

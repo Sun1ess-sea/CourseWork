@@ -1,0 +1,170 @@
+<section class="hero-section">
+    <div class="hero-content">
+      <img src="images/logo.png" alt="Logo" style="width: 100px; height: auto;">
+      <h1>Коллегия адвокатов «Перспектива»</h1>
+      <p>Осуществляем юридические консультации и помощь в делах различной сложности в г. Челябинске</p>
+      <a href="/#form" class="btn btn-primary">Получить бесплатную консультацию</a>
+    </div>
+</section>
+
+<div class="container my-5 pt-4">
+    <div class="text-center">
+        <img src="images/scales.png" alt="Icon" class="img-fluid mb-3" style="max-width: 100px;">
+        <h1 class="mb-3">Область Экспертизы</h1>
+        <p class="lead">Мы — Коллегия адвокатов и готовы помочь Вам в решении 
+          возникших проблем, оказываем профессиональные юридические услуги в рамках гражданских, 
+          административных и уголовных дел.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="info-container">
+          <img src="images/bank.png" alt="Image 1">
+          <div class="info-title">
+            <h2>Финансы и банковские вопросы</h2>
+          </div>
+          <div class="info-content">
+            <ul>
+              <li>Проверка существующего банковского счета</li>
+              <li>Открытие банковского счета для нового юридического лица</li>
+              <li>Защита активов</li>
+              <li>Корпоративные финансы</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="info-container">
+          <img src="images/corporate.png" alt="Image 2">
+          <div class="info-title">
+            <h2>Корпоративные вопросы</h2>
+          </div>
+          <div class="info-content">
+            <ul>
+              <li>Выбор типа регистрации компании</li>
+              <li>Подготовка и оформление учредительных документов</li>
+              <li>Консультация стартапов</li>
+              <li>Юридическое сопровождение сделок компании</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="info-container">
+          <img src="images/insurance.png" alt="Image 3">
+          <div class="info-title">
+            <h2>Страхование</h2>
+          </div>
+          <div class="info-content">
+            <ul>
+              <li>Консультации по всем видам страхования</li>
+              <li>Помощь в решении споров по страховым вопросам</li>
+              <li>Подготовка претензии и судебного иска</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="info-container">
+          <img src="images/tax1.png" alt="Image 4">
+          <div class="info-title">
+            <h2>Налогообложение</h2>
+          </div>
+          <div class="info-content">
+            <ul>
+              <li>Подготовка к налоговым проверкам и их сопровождение</li>
+              <li>Налоговое планирование и структуризация системы</li>
+              <li>Консультации по косвенным налогам</li>
+              <li>Налогообложение сделок</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <div class="container text-center py-5">
+    <h1 class="mb-4">Профи в юридическом деле</h1>
+    <p class="lead mb-5">Каждый из них найдет для вас лучшее решение Вашей проблемы.</p>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="images/director.jpg" class="card-img-top" alt="Михаил Степанов">
+                <div class="card-body">
+                    <h5 class="card-title">Михаил Степанов</h5>
+                    <p class="card-text">Арбитражный и корпоративный юрист</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="images/baba.jpg" class="card-img-top" alt="Лидия Парфенова">
+                <div class="card-body">
+                    <h5 class="card-title">Лидия Парфенова</h5>
+                    <p class="card-text">Юрист общей специализации по гражданским делам</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="images/woman.jpg" class="card-img-top" alt="Юлия Симонова">
+                <div class="card-body">
+                    <h5 class="card-title">Юлия Симонова</h5>
+                    <p class="card-text">Юрист по семейным и наследственным делам</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="images/arabic.jpg" class="card-img-top" alt="Виктор Канн">
+                <div class="card-body">
+                    <h5 class="card-title">Виктор Канн</h5>
+                    <p class="card-text">Адвокат по уголовным делам и в уголовно-исполнительной системе</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+<div class="container text-center py-5">
+    <h1 class="mb-4" id="achiev">ДОСТИЖЕНИЯ</h1>
+    <p class="mb-5">Наши последние достижения собраны для Вас!</p>
+    <div class="row">
+        {{#each achievements}}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{this.image_url}}" class="card-img-top" alt="Достижение">
+                    <div class="card-body">
+                        <p class="card-text">{{this.content}}</p>
+                        <a href="/achievements/{{this.id}}" class="btn btn-primary">Читать далее</a>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+<div class="container-fluid d-flex align-items-center justify-content-center min-vh-100 bg-overlay" id ="form">
+  <div class="text-center text-white form-container">
+      <h2>Отправьте запрос на бесплатную консультацию</h2>
+      <p>Наш специалист свяжется с вами, чтобы уточнить дату и время встречи.</p>
+      <form action="/submit" method="post">
+      <div class="mb-3">
+          <input type="email" pattern="[a-zA-Z0-9._%+-]{2,}+@[a-zA-Z0-9.-]{2,}+\.[a-zA-Z]{2,4}" inputmode="email" class="form-control" name="req_email" placeholder="Ваш Email" required>
+      </div>
+      <div class="mb-3">
+          <input pattern="8[0-9]{10}" inputmode="numeric" maxlength="11" class="form-control" name="req_phone" placeholder="Ваш номер телефона 8 (***) ***-**-**" required>
+      </div>
+      <div class="mb-3">
+          <input pattern="[а-яА-Яa-zA-Z\s]{2,}" inputmode="text" class="form-control" name="req_name" placeholder="Ваше имя" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Отправить!</button>
+      </form>
+      <p class="mt-3">Убедитесь, что ознакомились с политикой конфиденциальности!</p>
+  </div>
+</div>
+
